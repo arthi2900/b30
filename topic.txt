@@ -19,4 +19,59 @@ intro api
 //Application programming interface
 
 day-07
+//oop
+//4pillarers
+abstraction(decoding)
+encapsulation(securty)
+inheritance(child append parent)
+polymorhism(one person do multiple role)
+//main concept in oop
+//class
+//object
 
+class:(collection of object,property,method)
+object:(have a refferenc variable)
+new:it is opp feature.
+
+class car{
+    constructor(brand,color){
+        this.brand=brand;
+        this.color=color;
+    }
+}
+let c1= new car("audi","black");
+
+console.log(c1.brand);
+console.log(c1);
+//some features
+//a single object can have multiple reference
+class car{
+    constructor(brand,color){
+        this.brand=brand;
+        this.color=color;
+    }
+}
+let c1= new car("audi","black");
+//add new object
+let c2= new car("audi2","black2");
+let c3= new car("audi3","black3");
+let c4=c3;
+console.log(c1.brand);
+console.log(c3);
+console.log(c2);
+console.log(c4.brand);
+
+//method (method mean fuction,inside a class we use a fuction called methods.then we not use a function keyword )
+class car{
+    constructor(brand,color){
+        this.brand=brand;
+        this.color=color;
+    }
+    getbrand(){
+        return this.brand;
+        }
+}
+let c1= new car("audi","black");
+console.log(c1.brand);
+console.log(c1);
+console.log(c1.getbrand());
