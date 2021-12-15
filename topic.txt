@@ -4,4 +4,19 @@ day-06
 //iife
 //api
 //example api
-//handle
+//handle api steps
+
+1.anonymoys
+hole function 
+3.IIFE:
+immeadelty invoked function execution
+/*syntax
+(function(){
+//
+})(Call function);
+4.API
+intro api
+//Application programming interface
+
+day-07
+
