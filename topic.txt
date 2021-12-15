@@ -1,0 +1,7 @@
+day-06
+//anonymoys
+//arrow
+//iife
+//api
+//example api
+//handle
