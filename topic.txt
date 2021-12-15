@@ -31,7 +31,11 @@ polymorhism(one person do multiple role)
 
 class:(collection of object,property,method)
 object:(have a refferenc variable)
-new:it is opp feature.
+new:it is opp feature.that will create a new fresh object for only that class
+refference variable=s1;
+
+this->tempory refference in store.
+this.brand=brand;
 
 class car{
     constructor(brand,color){
@@ -75,3 +79,18 @@ let c1= new car("audi","black");
 console.log(c1.brand);
 console.log(c1);
 console.log(c1.getbrand());
+//example
+class rectangle{
+    constructor(length,breadth){
+        this.length=length;
+        this.breadth=breadth;
+            }
+            area(){
+                return this.length*this.breadth;
+            }
+}
+let a1=new rectangle(2,3);
+
+console.log(a1.length);
+console.log(a1.length);
+console.log(a1.area());
