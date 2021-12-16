@@ -122,7 +122,7 @@ let a11=[1,2,3];
 let a12=[4,5,6];
 a11.push(...a12);
 console.log(a11);
-
+//rest parameter
 function computer(a,b){
    console.log(a+b);
 }
