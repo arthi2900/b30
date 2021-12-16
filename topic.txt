@@ -94,3 +94,45 @@ let a1=new rectangle(2,3);
 console.log(a1.length);
 console.log(a1.length);
 console.log(a1.area());
+
+//day08
+//mfr
+
+//day09
+//call by value,call by referenc,spead
+
+//spread
+//normal
+let arr=['hello','guvi'];
+console.log(arr);
+//ex 1.expanding the Array
+console.log(...arr);
+//ex 2.string to char Array
+let doc="hello";
+let char=[...doc];
+console.log(char);
+//ex 3.combining of array using spread
+let a1=[1,2,3];
+let a2=[4,5,6];
+//console.log(a1.concat(a2));
+let a3=[...a1,...a2];
+console.log(a3);
+//ex 4.push a value in array
+let a11=[1,2,3];
+let a12=[4,5,6];
+a11.push(...a12);
+console.log(a11);
+
+function computer(a,b){
+   console.log(a+b);
+}
+computer(3,1,2,4);
+
+function computer(...item){
+   let sum=0;
+   for(var i=0;i<item.length;i++){
+              sum=sum+item[i];
+   }
+   return sum;
+  }
+console.log(computer(3,1,2,4));
