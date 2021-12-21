@@ -189,3 +189,20 @@ they are not affected by scrolling
 they will get affected by scrolling , but.. if you reach their position they will stick on to it
 
 //day15
+//rwd,media queries,drop down box,intro to bootstrap
+
+//rwd
+responsive web design
+@media screen and (max-width: 500px) {
+
+    div{
+        background-color:red;
+    }
+}
+@media screen and (min-width: 500px) {
+
+div{
+    background-color:green;
+}
+}
+//intro bootstrap 4.6
