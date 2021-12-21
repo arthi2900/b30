@@ -150,8 +150,9 @@ console.log(c);
 console.log(d);
 console.log
 
-//day13
-Position properties
+//day14
+Position properties,important,override even using important keyword,gradient,overflow
+
 need: even through if you have top, left bottom, or right  which can be used to place/align  the elements in the web page 
 Now On what basis they have to be placed ??.......
 1.static
@@ -186,3 +187,5 @@ they are not affected by scrolling
 
 5.sticky:
 they will get affected by scrolling , but.. if you reach their position they will stick on to it
+
+//day15
