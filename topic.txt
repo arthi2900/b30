@@ -33,7 +33,6 @@ class:(collection of object,property,method)
 object:(have a refferenc variable)
 new:it is opp feature.that will create a new fresh object for only that class
 refference variable=s1;
-
 this->tempory refference in store.
 this.brand=brand;
 
