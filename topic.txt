@@ -241,7 +241,104 @@ div{
 //callback hell :we don't use callback for larger functions/
 //because of callback hell scenario
 //callback :used only for short async operations(Set Timeout)
+   
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+   </head>
+   <body>
+       <script>
+           //timeout function
+           /*call stack:it used to keep track of functions to be executed(lifo)
+           //event queue:it is a place where async code awaits for executions(fifo)
+           //event queue will 
+*/
 
+//asyn
+/* console.log("hello1");
+            console.log("hello2");
+           setTimeout(()=>{
+               console.log("hello3")
+           },5000);
+           console.log("hello4");
+           */
+          //priyority in time delay 
+    
+          /* setTimeout(()=>{
+               console.log("hello1")
+           },5000);
+           setTimeout(()=>{
+               console.log("hello2")
+           },2000);
+           setTimeout(()=>{
+               console.log("hello3")
+           },3000);
+           */
+           //output
+ //hello2
+//hello3
+//hello1
+
+//event loop,call stack,event queue
+/*call stack
+* it is used to keep track of functions to be executed
+eg browser history page
+using 
+
+
+const hi=()=>{
+    bye();
+console.log("hi");
+}
+const bye=()=>{
+  console.log("byee");
+}
+hi();
+//step1 hi() go to 
+*/
+/*
+
+console.log("Hi!");
+
+setTimeout(function timeout() {
+    console.log("Click the button!");
+}, 2);
+
+console.log("Welcome to loupe.");
+setTimeout(function timer() {
+    console.log("Click the button!");
+}, 5);
+console.log("Welcome to loupe.");
+console.log("Welcome to loupe.");
+console.log("Welcome to loupe.");
+console.log("Welcome to loupe.");
+console.log("Welcome to loupe.");
+console.log("Welcome to loupe.");
+console.log("Welcome to loupe.");
+console.log("Welcome to loupe.");
+console.log("Welcome to loupe.");
+//callback
+whwn a function simply accepts another function as a paramenter.
+that parameter function is nothing but called as callback function */
+          
+//naming a callback function
+function foo(name){
+console.log(`hello ${name} jdsfg`);
+}
+foo("arthi");
+function intro(fname,lname,cb){
+const full=`${fname} ${lname} `;
+cb(full);
+}
+intro("arthi","et5u",foo);
+
+          </script>
+   </body>
+   </html>
 
 //promise :it returns an Object as a result of async ops
 //Why promise??:To overcome call back hell scenario in js
@@ -275,3 +372,376 @@ div{
 //1st adv: usage of promise as a return type of a function 
 //2nd adv:we can use to handle ,multiple async ops
 //chaining of promises
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // day23
+//asyn/await
+/*
+function getdata(){
+return new Promise((resolve,reject)=>{
+setTimeout(()=>resolve("this is resolved"),3000);
+});
+}
+function putdata(){
+return new Promise((resolve,reject)=>{
+setTimeout(()=>reject("this is reject"),5000);
+});
+}
+ async function foo(){
+const s1=await getdata(); //waiting  result then async function 
+const s2=await putdata(); 
+console.log(s1);
+console.log(s2);
+}
+      foo()
+      //console.log(foo());
+     */
+      //muli api fetch
+/*
+function getdata(){
+return fetch("https://data.covid19india.org/v4/min/timeseries.min.json");
+}
+function putdata(){
+    return fetch("https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+}
+ async function foo(){
+const s1=await getdata();
+//then replace await
+console.log(s1);
+let result1=await s1.json();
+console.log(result1);
+const s2=await putdata(); 
+console.log(s2);
+}
+      foo()
+      //console.log(foo());
+      */
+      //chain promise
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /*  let p1=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>{console.log("resolve1")},3000);
+       
+    }
+    else{
+        setTimeout(()=>{console.log("reject1")},3000);
+    }
+});
+let p2=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>{console.log("resolve2")},2000);
+       
+    }
+    else{
+        setTimeout(()=>{console.log("reject2")},2000);
+    }
+});
+let p3=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>{console.log("resolve3")},5000);
+       
+    }
+    else{
+        setTimeout(()=>{console.log("reject3")},5000);
+    }
+});
+console.log(p1,p2,p3);
+*/
+//p1.then((data)=>console.log())
+/* ALL VALUE TRUE THEN
+let p1=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>{console.log("resolve1")},3000);
+       
+    }
+    else{
+        setTimeout(()=>{console.log("reject1")},3000);
+    }
+});
+let p2=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>{console.log("resolve2")},2000);
+       
+    }
+    else{
+        setTimeout(()=>{console.log("reject2")},2000);
+    }
+});
+let p3=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>{console.log("resolve3")},5000);
+       
+    }
+    else{
+        setTimeout(()=>{console.log("reject3")},5000);
+    }
+});
+console.log(p1,p2,p3);
+Promise.all([p1,p2,p3]).then((data)=>console.log(data)).catch((error)=>console.log(error));*/
+//order change 
+/*
+let p1=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>resolve("hello1"),3000);
+       
+    }
+    else{
+        setTimeout(()=>resolve("hello1"),3000);
+    }
+});
+let p2=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>resolve("hello1"),5000);
+       
+    }
+    else{
+        setTimeout(()=>resolve("hello1"),5000);
+    }
+});
+let p3=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>resolve("hello1"),2000);
+       
+    }
+    else{
+        setTimeout(()=>resolve("hello1"),2000);
+    }
+});
+console.log(p1,p2,p3);
+Promise.all([p2,p3,p1]).then((data)=>console.log(data)).catch((error)=>console.log(error));
+/*
+
+//ANY FALSE THEN WHAT HAPPEN
+//STOP THEN THAT VALUE DISPLAY
+//single false
+/*let p1=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>resolve("hello1"),2000);
+       
+    }
+    else{
+        setTimeout(()=>reject("hello1"),2000);
+    }
+});
+let p2=new Promise((resolve,reject)=>{
+    if(false){
+        setTimeout(()=>resolve("hello2"),5000);
+       
+    }
+    else{
+        setTimeout(()=>reject("hello2"),5000);
+    }
+});
+let p3=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>resolve("hello3"),3000);
+       
+    }
+    else{
+        setTimeout(()=>reject("hello3"),3000);
+    }
+});
+console.log(p1,p2,p3);
+//using to display in 
+Promise.all([p1,p2,p3]).then((data)=>console.log(data)).catch((error)=>console.log(error));
+*/
+
+//more false then display a least time to display
+/*
+let p1=new Promise((resolve,reject)=>{
+    if(false){
+        setTimeout(()=>resolve("hello1"),12000);
+       
+    }
+    else{
+        setTimeout(()=>reject("hello1"),12000);
+    }
+});
+let p2=new Promise((resolve,reject)=>{
+    if(true){
+        setTimeout(()=>resolve("hello2"),5000);
+       
+    }
+    else{
+        setTimeout(()=>reject("hello2"),5000);
+    }
+});
+let p3=new Promise((resolve,reject)=>{
+    if(false){
+        setTimeout(()=>resolve("hello3"),3000);
+       
+    }
+    else{
+        setTimeout(()=>reject("hello3"),3000);
+    }
+});
+console.log(p1,p2,p3);
+//using to display in 
+Promise.all([p1,p2,p3]).then((data)=>console.log(data)).catch((error)=>console.log(error));
+
+*/
+//
+/*main example
+let res=fetch('https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json');
+console.log(res);
+res.then((data)=>{
+    //change json
+  return data.json();  
+}).then((data)=>console.log(data)).catch((error)=>console.log(error));
+*/
+/*
+//india
+let res=fetch('https://data.covid19india.org/v4/min/data.min.json');
+console.log(res);
+res.then((data)=>{
+    //change json
+  return data.json();  
+}).then((data)=>
+
+{    console.log(data['TN']);
+console.log(`total in tamilnadu`);
+console.log( data['TN'].total);
+console.log(`total in chennai`);
+console.log( data['TN'].districts.Chennai);
+console.log( data['TN'].districts.Chennai.total);
+
+  //return foo(data); 
+}).catch((error)=>{
+    console.log(error);
+})
+*/
+//world
+let res1=fetch('https://api.covid19api.com/total/country/india');
+console.log(res1);
+res1.then((data1)=>{
+    //change json
+  return data1.json();  
+}).then((data1)=>
+{    console.log(data1);
+
+    console.log(data1.Confirmed);
+
+  //return foo(data); 
+}).catch((error)=>{
+    console.log(error);
+})
+
+        </script>
+</body>
+</html>
+      
+      
+      
+     //xml in async await
+     //resolved
+     /*async function foo(){
+const s1=await fetch("https://data.covid19india.org/v4/min/timeseries.min.json");
+//then replace await
+let result1=await s1.json();
+console.log(result1);
+}
+     foo();
+     //reject
+     function putdata(){
+return new Promise((resolve,reject)=>{
+setTimeout(()=>reject("this is reject"),5000);
+});
+}
+
+async function foo(){
+    try{
+const data=await putdata();
+
+    }
+catch(error){
+console.log(error);
+}
+}
+foo();
+async function foo(){
+    try{
+const data=await fetch("https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+let result=await data.json();
+console.log(result);
+for(var i in result){
+    console.log(result[i].name);
+}
+
+}
+catch(error){
+console.log(error);
+}
+}
+foo();
+*/
+
+        </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+async function getdata(){
+   
+   let res=await fetch('https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json')
+   let result= await res.json();
+   console.log(result);
+   try {
+   
+       for(var i in result){
+       var name=result[i].name;
+       var latlon=result[i].latlng;
+        wd(name,...latlon);
+   }
+
+   } 
+catch (error) {
+   console.log("invalid country"+name+error.message);
+}
+}
+//day
+async function wd(name,lat,lon){
+try {
+    
+  let res1=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=726dc15721bbb4c4994af8ef267aec0c`)
+  let result1=await res1.json();
+  console.log(`${name}:${result1.main.temp}`);
+
+} catch (error) {
+  console.log(error); 
+}
+}
+
+getdata();
+
+
+
+
+        </script>
+</body>
+</html>
